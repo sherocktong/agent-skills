@@ -6,7 +6,6 @@ Claude Code skills repository. Each skill lives in its own directory with a `SKI
 
 | Skill | Description |
 |---|---|
-
 | `browser-use` | Automate browser tasks using `browser-use` CLI attached to an existing Chrome instance |
 | `comfy` | Manage ComfyUI using `comfy` and `cm-cli` CLIs |
 | `dig` | Analyze an incident report or requirement description: break it down into structured parts, then identify missing points, gaps, and overlooked concerns |
