@@ -9,14 +9,19 @@ If the conversation just started with no context, fall back to the current worki
 
 Perform all of the following based on the detected environment:
 
-1. **Claude Code session**: Rename by appending a `custom-title` record to the current session's JSONL transcript file. The record format is:
+1. **Claude Code session**: Rename by appending BOTH a `custom-title` record AND an `agent-name` record to the current session's JSONL transcript file. The record formats are:
    ```json
    {"type":"custom-title","customTitle":"<name>","sessionId":"<sessionId>"}
+   {"type":"agent-name","agentName":"<name>","sessionId":"<sessionId>"}
    ```
    To find the correct JSONL file:
    - List files in `~/.claude/projects/` sorted by modification time: `ls -lt ~/.claude/projects/*/*.jsonl | head -3`
    - Extract `sessionId` from the first line of the most recently modified JSONL: `head -1 <file> | jq -r '.sessionId'`
-   - Append the record: `echo '{"type":"custom-title","customTitle":"<name>","sessionId":"<sessionId>"}' >> <file>`
+   - Append both records:
+     ```bash
+     echo '{"type":"custom-title","customTitle":"<name>","sessionId":"<sessionId>"}' >> <file>
+     echo '{"type":"agent-name","agentName":"<name>","sessionId":"<sessionId>"}' >> <file>
+     ```
 
 2. **Terminal title**: Set the terminal title using the generic OSC escape sequence:
    ```bash
@@ -44,7 +49,7 @@ Steps:
    - `$TERM_PROGRAM` == "iTerm.app"` → iTerm2
    - `$TERM_PROGRAM` == "Apple_Terminal"` → Terminal.app
    - fallback → generic OSC escape sequence
-3. Find the current session's JSONL file and append the `custom-title` record to rename the Claude Code session
+3. Find the current session's JSONL file and append BOTH the `custom-title` AND `agent-name` records to rename the Claude Code session (both are needed for full compatibility)
 4. Set the terminal title via the generic OSC escape sequence (always do this as a baseline)
 5. Rename the terminal tab/window using the emulator-specific method detected in step 2
 6. If in tmux, also rename the tmux window
