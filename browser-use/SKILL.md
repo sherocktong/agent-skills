@@ -5,6 +5,7 @@ Automate browser tasks using `browser-use` CLI attached to an existing Chrome in
 Always attach to an already-running Chrome instance. Never create a new one.
 
 1. Get the CDP URL: `curl -s http://127.0.0.1:9222/json/version | jq -r '.webSocketDebuggerUrl'`
+   - If this fails or returns empty, **STOP** and ask the user to check if Chrome is running with `--remote-debugging-port=9222`
 2. Pass it via `--cdp-url <url>` on every command
 
 ## Session Management
