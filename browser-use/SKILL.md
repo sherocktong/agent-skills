@@ -15,10 +15,21 @@ Always attach to an already-running Chrome instance. Never create a new one.
 - Always open a new tab for each navigation using `browser-use --cdp-url <url> --session <name> open <url>`
 - Always close the session when done: `browser-use --cdp-url <url> --session <name> close`
 
+## Downloads
+
+Files downloaded by the browser land in `/tmp/browser-use-downloads-{id}/` where `{id}` is a random 8-character hex string generated per browser profile instance — **not** a session name or any other predictable value. To find downloaded files after an action, list all matching directories:
+
+```bash
+ls /tmp/browser-use-downloads-*/
+```
+
+The most recently modified directory is usually the one for the current session.
+
 ## Workflow
 
 1. Get CDP URL from `http://127.0.0.1:9222/json/version`
 2. List existing sessions to check current state
 3. Open a new named session and navigate to the target URL
 4. Perform the requested browser actions (click, type, extract, etc.)
-5. Close the session when finished
+5. Check `/tmp/browser-use-downloads-*/` for any downloaded files
+6. Close the session when finished
