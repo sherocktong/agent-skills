@@ -1,3 +1,8 @@
+---
+name: smart-rename
+description: Rename the current session across all contexts.
+---
+
 Rename the current session across all contexts.
 
 Auto-generate a smart name by analyzing the conversation context:

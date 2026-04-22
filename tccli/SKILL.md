@@ -1,3 +1,8 @@
+---
+name: tccli
+description: # tccli skill
+---
+
 # tccli skill
 
 Use the Tencent Cloud CLI (`tccli`) to interact with any Tencent Cloud service on behalf of the user.

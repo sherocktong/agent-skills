@@ -1,3 +1,8 @@
+---
+name: nohup
+description: When invoked, run ALL background tasks detached from the Claude Code session using nohup, so they survive even if the session ends.
+---
+
 When invoked, run ALL background tasks detached from the Claude Code session using nohup, so they survive even if the session ends.
 
 If there are existing background tasks running:

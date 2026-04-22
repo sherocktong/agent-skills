@@ -1,3 +1,8 @@
+---
+name: comfy
+description: Manage ComfyUI using `comfy` and `cm-cli` CLIs.
+---
+
 Manage ComfyUI using `comfy` and `cm-cli` CLIs.
 
 ## comfy — ComfyUI lifecycle & models

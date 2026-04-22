@@ -1,8 +1,36 @@
+---
+name: macos-use
+description: Automate macOS tasks using the `macos-use` Gradio app.
+---
+
 Automate macOS tasks using the `macos-use` Gradio app.
 
 ## Launching
 
 Run `macos-use` to start the Gradio web interface. It opens on `http://0.0.0.0:7860` (or `SERVER_PORT` env var).
+
+## Permission check (REQUIRED before running tasks)
+
+Before submitting any task, verify macOS accessibility permissions are granted:
+
+```bash
+python3 - <<'EOF'
+import subprocess
+result = subprocess.run(
+    ['osascript', '-e', 'tell application "System Events" to get name of first process'],
+    capture_output=True, text=True
+)
+if result.returncode != 0 or result.stderr:
+    print("PERMISSION_MISSING")
+else:
+    print("OK")
+EOF
+```
+
+If the output is `PERMISSION_MISSING`:
+1. **Stop immediately** — do not proceed with the task
+2. Tell the user: "macOS accessibility permissions are not granted. Please go to **System Settings → Privacy & Security → Accessibility** and enable access for Terminal (or your terminal app). Then re-run the task."
+3. Wait for the user to confirm permissions are granted before retrying
 
 ## Using the interface
 
@@ -10,6 +38,18 @@ Run `macos-use` to start the Gradio web interface. It opens on `http://0.0.0.0:7
 2. Optionally click "Refine Prompt" to let the LLM improve your prompt
 3. Click "Run" to execute the task
 4. Monitor the terminal output and result
+
+## Auto-shutdown after task completion
+
+After the task completes (success or failure), shut down the `macos-use` service automatically:
+
+```bash
+pkill -f "macos-use" 2>/dev/null || true
+# Also kill any process on the port
+lsof -ti:7860 | xargs kill -9 2>/dev/null || true
+```
+
+Confirm shutdown to the user: "macos-use service has been stopped."
 
 ## Task prompts
 

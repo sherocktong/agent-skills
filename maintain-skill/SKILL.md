@@ -1,3 +1,8 @@
+---
+name: maintain-skill
+description: Create or update a skill based on the user's description.
+---
+
 Create or update a skill based on the user's description.
 
 Steps:

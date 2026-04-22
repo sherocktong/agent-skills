@@ -1,3 +1,8 @@
+---
+name: file
+description: List all files mentioned in the current session, let the user pick one, and copy its path to the clipboard.
+---
+
 List all files mentioned in the current session, let the user pick one, and copy its path to the clipboard.
 
 ## Steps

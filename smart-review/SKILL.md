@@ -1,3 +1,8 @@
+---
+name: smart-review
+description: Review the current branch's changes for completeness and correctness, then run relevant tests.
+---
+
 Review the current branch's changes for completeness and correctness, then run relevant tests.
 
 Steps:

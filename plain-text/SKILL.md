@@ -1,3 +1,8 @@
+---
+name: plain-text
+description: Respond to the user's request in plain text and copy the response to the clipboard.
+---
+
 Respond to the user's request in plain text and copy the response to the clipboard.
 
 Steps:

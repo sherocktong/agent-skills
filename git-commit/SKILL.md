@@ -1,3 +1,8 @@
+---
+name: git-commit
+description: Commit staged files with an auto-generated commit message.
+---
+
 Commit staged files with an auto-generated commit message.
 
 Steps:

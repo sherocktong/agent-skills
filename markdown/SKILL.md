@@ -1,3 +1,8 @@
+---
+name: markdown
+description: Respond to the user's request in markdown format and copy the response to the clipboard.
+---
+
 Respond to the user's request in markdown format and copy the response to the clipboard.
 
 Steps:

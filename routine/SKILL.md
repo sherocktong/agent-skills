@@ -1,3 +1,8 @@
+---
+name: routine
+description: Enter plan mode automatically to analyze the user's requirements.
+---
+
 Enter plan mode automatically to analyze the user's requirements.
 
 Steps:

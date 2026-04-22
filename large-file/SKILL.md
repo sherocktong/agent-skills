@@ -1,3 +1,8 @@
+---
+name: large-file
+description: Prevent context overflow when working with large files by reading them incrementally and surgically.
+---
+
 Prevent context overflow when working with large files by reading them incrementally and surgically.
 
 ## Threshold

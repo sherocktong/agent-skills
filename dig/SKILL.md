@@ -1,3 +1,8 @@
+---
+name: dig
+description: Analyze an incident report or requirement description: break it down into structured parts, then identify missing points, gaps, and overlooked concerns.
+---
+
 Analyze an incident report or requirement description: break it down into structured parts, then identify missing points, gaps, and overlooked concerns.
 
 Steps:

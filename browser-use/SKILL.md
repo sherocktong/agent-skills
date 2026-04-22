@@ -1,3 +1,8 @@
+---
+name: browser-use
+description: Automate browser tasks using `browser-use` CLI attached to an existing Chrome instance.
+---
+
 Automate browser tasks using `browser-use` CLI attached to an existing Chrome instance.
 
 ## Connection

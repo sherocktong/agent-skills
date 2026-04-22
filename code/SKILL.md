@@ -1,3 +1,8 @@
+---
+name: code
+description: # `code` skill
+---
+
 # `code` skill
 
 Use this skill when the user asks to open files in VS Code (e.g., "open this in code", "open with code", "code .").
