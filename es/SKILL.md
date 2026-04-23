@@ -13,6 +13,14 @@ triggers:
 
 Use the `es` CLI to interact with Elasticsearch. The default URL is `http://localhost:9200`.
 
+## Credentials
+
+Credentials are read from environment variables:
+- `ES_USER` — Elasticsearch username
+- `ES_PASS` — Elasticsearch password
+
+The `es` CLI picks these up automatically. Do not hardcode credentials in any command.
+
 ## Rules
 
 - **NEVER use `curl` to call Elasticsearch endpoints directly.** Always use the `es` CLI.
