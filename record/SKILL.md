@@ -18,6 +18,7 @@ Steps:
    - Mention relevant technologies, services, components, or architectural areas involved
    - Note significant technical decisions, trade-offs, or design choices made
    - 2-5 bullet points is typical; group closely related items together
+   - Include ticket / task references when applicable (e.g., Jira `PROJ-123`, GitHub `#456`, Linear `TEAM-789`). List them inline with the relevant bullet or as a separate `- Refs: TICKET-1, #2` line.
    - Avoid: full file paths, shell commands, code snippets, raw tool-call transcripts
    - Include: the goal, the result, the technical scope (e.g. "API layer", "K8s deployment", "React frontend"), and any meaningful follow-ups
 5. Append the entry under `## Work Log` in this format:

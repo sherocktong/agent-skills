@@ -26,5 +26,6 @@ Steps:
    - Write a short prose summary (2-5 sentences) covering the day's themes and overall progress
    - Follow with a concise bullet list of accomplishments, grouped by project/area when multiple are involved
    - Strip out implementation details, file paths, commands, and tool-call noise — merge near-duplicate entries into a single outcome
+   - Preserve ticket / task references (e.g., Jira `PROJ-123`, GitHub `#456`, Linear `TEAM-789`) found in the entries; surface them in the report so they are easy to trace
    - End with a brief "Follow-ups" section only if there are open items worth flagging
 7. Output the report to the user in the response
