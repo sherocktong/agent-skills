@@ -1,6 +1,6 @@
 ---
 name: record
-description: Record a work log entry summarizing the current session into the Work Log section of the current working directory's CLAUDE.md, written for a technical audience.
+description: Record a work log entry summarizing the current session into the Work Log section of the current working directory's CLAUDE.md, written for a technical audience. Includes agent session IDs when relevant.
 ---
 
 Record a work log entry summarizing the current session into the Work Log section of the current working directory's CLAUDE.md.
@@ -13,15 +13,21 @@ Steps:
 2. Check whether a `## Work Log` section exists in the file
    - If not, append a new `## Work Log` section at the end of the file
 3. Get the current timestamp using `date '+%Y-%m-%d %H:%M:%S'`
-4. Summarize the session as a concise technical work log:
+4. Get the current Claude Code session ID (if available) using:
+   ```
+   python3 -c "import sys,json; print(json.load(open(sys.argv[1]))['sessionId'])" "$HOME/.claude/sessions/$PPID.json" 2>/dev/null
+   ```
+   - If the command fails or returns nothing, skip including the session ID
+5. Summarize the session as a concise technical work log:
    - Focus on outcomes and key technical context, not every granular step
    - Mention relevant technologies, services, components, or architectural areas involved
    - Note significant technical decisions, trade-offs, or design choices made
    - 2-5 bullet points is typical; group closely related items together
    - Include ticket / task references when applicable (e.g., Jira `PROJ-123`, GitHub `#456`, Linear `TEAM-789`). List them inline with the relevant bullet or as a separate `- Refs: TICKET-1, #2` line.
+   - Always include the current session ID as a separate `- Session: <session-id>` line if it was successfully retrieved in step 4. If multiple sessions were involved, list them as `- Sessions: <id1>, <id2>`.
    - Avoid: full file paths, shell commands, code snippets, raw tool-call transcripts
    - Include: the goal, the result, the technical scope (e.g. "API layer", "K8s deployment", "React frontend"), and any meaningful follow-ups
-5. Append the entry under `## Work Log` in this format:
+6. Append the entry under `## Work Log` in this format:
 
    ```
    ### YYYY-MM-DD HH:MM:SS
@@ -31,4 +37,4 @@ Steps:
 
    - Newest entries go at the bottom (chronological order)
    - Use `Edit` to insert under the section header rather than rewriting the file
-6. Confirm to the user that the entry has been recorded, showing the timestamp used
+7. Confirm to the user that the entry has been recorded, showing the timestamp used
