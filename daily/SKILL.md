@@ -28,4 +28,5 @@ Steps:
    - Strip out implementation details, file paths, commands, and tool-call noise — merge near-duplicate entries into a single outcome
    - Preserve ticket / task references (e.g., Jira `PROJ-123`, GitHub `#456`, Linear `TEAM-789`) found in the entries; surface them in the report so they are easy to trace
    - End with a brief "Follow-ups" section only if there are open items worth flagging
+   - Always add relevant emojis throughout the report to make it visually engaging and fancy (e.g., 📊 for progress, ✅ for completed items, 🚀 for launches, 🐛 for fixes, 🔧 for tooling, 📝 for documentation, ⚠️ for follow-ups)
 7. Output the report to the user in the response

@@ -24,12 +24,10 @@ Steps:
    - Note significant technical decisions, trade-offs, or design choices made
    - 2-5 bullet points is typical; group closely related items together
    - Include ticket / task references when applicable (e.g., Jira `PROJ-123`, GitHub `#456`, Linear `TEAM-789`). List them inline with the relevant bullet or as a separate `- Refs: TICKET-1, #2` line.
-   - Always include the current session ID as a separate `- Session: <session-id>` line if it was successfully retrieved in step 4. If multiple sessions were involved, list them as `- Sessions: <id1>, <id2>`.
    - Avoid: full file paths, shell commands, code snippets, raw tool-call transcripts
    - Include: the goal, the result, the technical scope (e.g. "API layer", "K8s deployment", "React frontend"), and any meaningful follow-ups
 6. Check whether an entry already exists in `## Work Log` that:
-   - Has a `###` timestamp header with today's date (`YYYY-MM-DD`)
-   - Contains the current session ID (from step 4) in its body
+   - Has a `###` timestamp header with today's date (`YYYY-MM-DD`) **and** contains the current session ID (from step 4) in that same header line
    - If such an entry exists, replace the entire entry block (from its `###` line up to, but not including, the next `###` line or end of section) with the newly generated entry using the current timestamp.
    - If no matching entry exists, append the new entry at the bottom of the `## Work Log` section (chronological order).
 
@@ -37,7 +35,7 @@ Steps:
 
    Entry format:
    ```
-   ### YYYY-MM-DD HH:MM:SS
+   ### YYYY-MM-DD HH:MM:SS — Session: <session-id>
    - <technical outcome / context 1>
    - <technical outcome / context 2>
    ```
